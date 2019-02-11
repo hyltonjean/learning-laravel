@@ -13,3 +13,5 @@
 
 // General
 Route::get('/', 'GeneralController@home');
+
+Route::get('/jobs', 'JobController@list');
