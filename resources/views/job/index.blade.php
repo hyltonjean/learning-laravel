@@ -7,13 +7,12 @@
 	<title>Laravel</title>
 </head>
 <body>
-	<h1>Welcome to Laravel</h1>
+	<h1>Welcome to Jobs</h1>
 		<ul>
-			@foreach ($jobs as $job) 
-				<a href="{{ $job['url'] }}"><li>{{ $job['title'] }}</li></a>
+			@foreach ($jobs as $job)
+				<a href="{{ $job->url }}"><li>{{ $job->title }}</li></a>
 			@endforeach
 		</ul>
-	
+
 </body>
 </html>
-

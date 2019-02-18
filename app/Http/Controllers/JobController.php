@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Job;
 use Cubitworx\Laravel\Cms\Core\Support\Page;
 use Illuminate\Http\Request;
 
 class JobController extends Controller {
 
 	public function list(Request $request) {
-		$jobs = [
-			['title' => 'Title One'],
-			['title' => 'Title Two']
-		];
-
-		foreach ($jobs as &$job)
-			$job['url'] = '/jobs/' . str_slug($job['title']);
+// dd(Job::all(), Job::where('id', 1), Job::all()->toArray(), Job::all()->toJson());
+		$jobs = Job::where('id', 1)->get();
 
 		return view('job.index', ['jobs' => $jobs]);
 	}
