@@ -10,7 +10,8 @@ class JobController extends Controller {
 
 	public function list(Request $request) {
 // dd(Job::all(), Job::where('id', 1), Job::all()->toArray(), Job::all()->toJson());
-		$jobs = Job::where('id', 1)->get();
+		// $jobs = Job::where('id', 1)->get();
+		$jobs = Job::all();
 
 		return view('job.index', ['jobs' => $jobs]);
 	}
