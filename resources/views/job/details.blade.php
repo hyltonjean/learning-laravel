@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Laravel</title>
+	<title>Details</title>
 <style>
 	ul{
 		padding:0;
@@ -24,12 +24,9 @@
 </style>
 </head>
 <body>
-	<h1>Welcome to Jobs</h1>
-		<ul>
-			@foreach ($jobs as $job)
-			<a href="/jobs/{{ $job->url }}"><li>{{ $job->title }}</li></a>
-			<span>{{ $job->created_at->diffForHumans() }}</span>
-			@endforeach
-		</ul>
+	<h1>Jobs Details Page</h1>
+		<p>{{ $job->title }}</p>
+		<p>{{ $job->created_at->format('l d M Y') }}</p>
+		<p>{{ $job->status }}</p>
 </body>
 </html>

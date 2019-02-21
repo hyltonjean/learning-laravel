@@ -16,10 +16,11 @@ use Faker\Generator as Faker;
 
 $factory->define(Model\Job::class, function(Faker $faker) {
 	$title = $faker->sentence(10);
+	$status = $faker->randomElement(['Published', 'Unpublished']);
 
 	return [
 		'title' => $title,
-		'url' => str_slug($title)
+		'url' => str_slug($title),
+		'status' => $status
 	];
 });
-

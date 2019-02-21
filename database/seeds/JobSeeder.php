@@ -11,6 +11,6 @@ class JobSeeder extends Seeder {
      */
     public function run()
     {
-        factory(Model\Jobs::class, 10)->create();
+        factory(Model\Job::class, 10)->create();
     }
 }
