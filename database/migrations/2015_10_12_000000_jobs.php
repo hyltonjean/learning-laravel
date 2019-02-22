@@ -19,7 +19,6 @@ class Jobs extends Migration {
 			$table->timestamps();
 		});
 	}
-
 	/**
 	 * Reverse the migrations.
 	 *
@@ -28,5 +27,4 @@ class Jobs extends Migration {
 	public function down() {
 		Schema::dropIfExists('jobs');
 	}
-
 }

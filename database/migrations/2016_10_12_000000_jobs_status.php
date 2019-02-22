@@ -16,7 +16,6 @@ class JobsStatus extends Migration {
 			$table->string('status')->index();
 		});
 	}
-
 	/**
 	 * Reverse the migrations.
 	 *
@@ -25,5 +24,4 @@ class JobsStatus extends Migration {
 	public function down() {
 		Schema::dropColumn('status');
 	}
-
 }
