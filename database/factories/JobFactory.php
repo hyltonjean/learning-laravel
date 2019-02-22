@@ -2,6 +2,7 @@
 
 use App\Model;
 use Faker\Generator as Faker;
+use Cubitworx\Laravel\Languages\Model\Language;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,12 @@ use Faker\Generator as Faker;
 $factory->define(Model\Job::class, function(Faker $faker) {
 	$title = $faker->sentence(10);
 	$status = $faker->randomElement(['Published', 'Unpublished']);
+	$languages = Language::all()->random()->id;
 
 	return [
 		'title' => $title,
 		'url' => str_slug($title),
-		'status' => $status
+		'status' => $status,
+		'languages' => $languages
 	];
 });
