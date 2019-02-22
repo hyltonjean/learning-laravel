@@ -1,9 +1,7 @@
 <?php
 
-use App\Model\Job;
+use App\Model;
 use Faker\Generator as Faker;
-use Cubitworx\Laravel\Languages\Model;
-use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +14,13 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-$factory->define(Job::class, function(Faker $faker) {
+$factory->define(Model\Job::class, function(Faker $faker) {
 	$title = $faker->sentence(10);
 	$status = $faker->randomElement(['Published', 'Unpublished']);
-	$languages = DB::table('languages')->select('id')->find(1);
 
 	return [
 		'title' => $title,
 		'url' => str_slug($title),
-		'status' => $status,
-		'languages' => $languages
+		'status' => $status
 	];
 });
