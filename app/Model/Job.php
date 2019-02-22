@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Model;
+use App\Support\Convert;
 
 use Illuminate\Database\Eloquent\Model as BaseClass;
 
@@ -11,6 +12,6 @@ class Job extends BaseClass {
 	];
 
 	public function getLanguagesCsvAttribute() {
-		return $this->Languages . '_csv';
+		return $this->languages . '_csv';
 	}
 }

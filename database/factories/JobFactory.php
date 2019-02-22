@@ -18,12 +18,12 @@ use Cubitworx\Laravel\Languages\Model\Language;
 $factory->define(Model\Job::class, function(Faker $faker) {
 	$title = $faker->sentence(10);
 	$status = $faker->randomElement(['Published', 'Unpublished']);
-	$languages = Language::all()->random()->id;
+	$language = language::inRandomOrder()->firstOrFail()->name;
 
 	return [
 		'title' => $title,
 		'url' => str_slug($title),
 		'status' => $status,
-		'languages' => $languages
+		'languages' => $language
 	];
 });
