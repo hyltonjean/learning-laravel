@@ -22,4 +22,7 @@ class JobController extends Controller {
 		return view('job.details', ['job' => $job]);
 	}
 
+	public function Id(Request $request, $value) {
+		return json_decode($value, true);
+ }
 }

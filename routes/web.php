@@ -17,3 +17,5 @@ Route::get('/', 'GeneralController@home');
 Route::get('/jobs', 'JobController@list');
 
 Route::get('/jobs/{url}', 'JobController@show');
+
+Route::get('/jobs', 'JobController@Id');
