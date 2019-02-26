@@ -13,18 +13,7 @@ class Job extends BaseClass {
 	];
 
 	public function getLanguagesCsvAttribute() {
-		$LanguageById = Cache::remember('languages-by-id', 5, function () {
-			return Language::all()->keyBy('id');
-		});
-
-		$value = [];
-		if ($this->languages) {
-			foreach( $this->languages as $langId ) {
-				if( isset( $LanguageById[$langId] ) )
-					$value[] = $LanguageById[$langId]->name;
-			}
-		}
-
-		return implode( ', ', $value );
+		$value = Language::all();
+		return $value->whereIn('id', $this->languages)->pluck('name')->implode(', ');
 	}
 }
