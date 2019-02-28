@@ -14,4 +14,12 @@ class Job extends BaseClass {
 	public function getLanguagesCsvAttribute() {
 		return Language::whereIn('id', $this->languages)->pluck('name')->implode(', ');
 	}
+
+	public function job_types() {
+		$this->belongsToMany('Model\JobType');
+	}
+
+	public function getJobTypesCsvAttribute() {
+
+	}
 }

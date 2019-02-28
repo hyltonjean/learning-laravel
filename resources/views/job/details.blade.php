@@ -29,5 +29,6 @@
 		<p>{{ $job->created_at->format('l d M Y') }}</p>
 		<p>{{ $job->status }}</p>
 		<p>{{ $job->languages_csv }}</p>
+		<p>{{ $job->job_types_csv }}</p>
 </body>
 </html>
