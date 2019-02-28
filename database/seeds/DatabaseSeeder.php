@@ -9,9 +9,8 @@ class DatabaseSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		$this->call(
-			// [JobSeeder::class],
-			[JobTypesSeeder::class]
-		);
+		$this->call([
+			JobSeeder::class
+		]);
 	}
 }

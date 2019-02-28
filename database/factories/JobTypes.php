@@ -15,10 +15,10 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(Model\JobTypes::class, function(Faker $faker) {
-	$val = $faker->sentence(3);
+	$name = $faker->sentence(3);
 
 	return [
-		'name' => $val,
-		'slug' => str_slug($val)
+		'name' => $name,
+		'slug' => str_slug($name)
 	];
 });
