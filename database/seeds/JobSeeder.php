@@ -9,7 +9,13 @@ class JobSeeder extends Seeder {
 	 *
 	 * @return void
 	 */
+<<<<<<< HEAD
 	public function run() {
 		factory(Model\Job::class, 100)->create();
+=======
+	public function run()
+	{
+			factory(Model\Job::class, 10)->create();
+>>>>>>> parent of 4e6fb25... feat: reviewing Phase 5 of project for completion
 	}
 }
