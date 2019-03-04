@@ -16,6 +16,9 @@ class JobSeeder extends Seeder {
 	public function run()
 	{
 			factory(Model\Job::class, 10)->create();
+<<<<<<< HEAD
+>>>>>>> parent of 4e6fb25... feat: reviewing Phase 5 of project for completion
+=======
 >>>>>>> parent of 4e6fb25... feat: reviewing Phase 5 of project for completion
 	}
 }

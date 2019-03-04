@@ -15,6 +15,7 @@ class Job extends BaseClass {
 		return Language::whereIn('id', $this->languages)->pluck('name')->implode(', ');
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	public function job_types() {
 		return $this->belongsToMany('Model\JobType', 'job_job_type', 'job_id', 'job_type_id');
@@ -23,6 +24,8 @@ class Job extends BaseClass {
 	//  public function getJobTypesCsvAttribute() {
 
 	//  }
+=======
+>>>>>>> parent of 4e6fb25... feat: reviewing Phase 5 of project for completion
 =======
 >>>>>>> parent of 4e6fb25... feat: reviewing Phase 5 of project for completion
 }
