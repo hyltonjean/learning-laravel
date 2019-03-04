@@ -16,10 +16,10 @@ class Job extends BaseClass {
 	}
 
 	public function job_types() {
-		$this->belongsToMany('Model\JobType');
+		return $this->belongsToMany('Model\JobType', 'job_job_type', 'job_id', 'job_type_id');
 	}
 
-	public function getJobTypesCsvAttribute() {
+	//  public function getJobTypesCsvAttribute() {
 
-	}
+	//  }
 }

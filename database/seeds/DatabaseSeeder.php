@@ -9,9 +9,10 @@ class DatabaseSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		$seeders = array('JobSeeder', 'JobTypesSeeder', 'JobJobTypeSeeder');
-		foreach($seeders as $seeder) {
-			$this->call($seeder);
-		}
+		return $this->call([
+				JobSeeder::class,
+				JobTypesSeeder::class,
+				JobJobTypeSeeder::class
+		]);
 	}
 }

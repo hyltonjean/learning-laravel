@@ -13,10 +13,10 @@ class CreatePivotTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('job_job_type', function (Blueprint $table) {
-			$table->integer('job_id');
-			$table->integer('job_type_id');
-
-			$table->primary(['job_id', 'job_type_id']);
+			$table->integer('job_id')->unsigned()->index();
+			$table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+			$table->integer('job_type_id')->unsigned()->index();
+			$table->foreign('job_type_id')->references('id')->on('job_types')->onDelete('cascade');
 			});
 	}
 
@@ -26,6 +26,6 @@ class CreatePivotTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::dropIfExists('job_job_type');
+		Schema::dropIfExists('job_job_types');
 	}
 }

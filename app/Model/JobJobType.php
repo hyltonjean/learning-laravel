@@ -1,11 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Model as PivotClass;
 
-class JobJobType extends Pivot
+class JobJobType extends PivotClass
 {
-    //
+  public function pivot() {
+		return $this->belongsToMany(Model\JobType::class, Model\Job::class);
+	}
 }

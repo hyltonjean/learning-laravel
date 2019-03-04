@@ -10,6 +10,6 @@ class JobSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		factory(Model\Job::class, 10)->create();
+		factory(Model\Job::class, 100)->create();
 	}
 }

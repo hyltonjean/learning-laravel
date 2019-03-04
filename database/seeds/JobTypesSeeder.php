@@ -11,6 +11,6 @@ class JobTypesSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
-		factory(Model\JobType::class, 3)->create();
+		factory(Model\JobType::class, 30)->create();
 	}
 }

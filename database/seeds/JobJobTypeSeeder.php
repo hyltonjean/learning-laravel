@@ -1,6 +1,6 @@
 <?php
 
-use Faker\Generator as Faker;
+use App\Model;
 use Illuminate\Database\Seeder;
 
 class JobJobTypeSeeder extends Seeder {
@@ -10,12 +10,16 @@ class JobJobTypeSeeder extends Seeder {
 	 *
 	 * @return void
 	 */
-	public function run(Faker $faker) {
-		foreach(range(1, 3) as $index) {
-			DB::table('job_job_type')->insert([
-				'job_id' => rand(1,10),
-				'job_type_id' => $faker->numberBetween(1,3)
-			]);
-		}
+	public function run() {
+
+		$jobIds = DB::table('jobs')->inRandomOrder()->limit(rand(1,3))->get()->pluck('id');
+		$typesIds = DB::table('job_types')->inRandomOrder()->limit(rand(1,3))->get()->pluck('id');
+
+		DB::table('job_job_type')->insert(
+			[
+				'job_id' => $jobIds,
+				'Job_type_id' => $typesIds
+			]
+		);
 	}
 }
