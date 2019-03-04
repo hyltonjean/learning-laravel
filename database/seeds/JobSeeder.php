@@ -9,15 +9,13 @@ class JobSeeder extends Seeder {
 	 *
 	 * @return void
 	 */
+<<<<<<< HEAD
+	public function run() {
+		factory(Model\Job::class, 100)->create();
+=======
 	public function run()
 	{
-		factory(Model\JobTypes::class, 3)->create();
-		factory(Model\Job::class, 10)->create();
-
-		$jobtypes = Model\JobTypes::find(1);
-		$jobtypes->jobs()->attach([1, 2]);
-
-		$jobtypes = Model\JobTypes::find(2);
-		$jobtypes->jobs()->attach(3);
+			factory(Model\Job::class, 10)->create();
+>>>>>>> parent of 4e6fb25... feat: reviewing Phase 5 of project for completion
 	}
 }

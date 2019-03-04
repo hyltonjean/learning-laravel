@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class JobTypes extends Migration {
+class CreateJobTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -18,14 +18,8 @@ class JobTypes extends Migration {
 			$table->string('slug');
 			$table->timestamps();
 		});
-
-		Schema::create('job_jobtype', function (Blueprint $table) {
-			$table->integer('job_id');
-			$table->integer('jobtype_id');
-
-			$table->primary(['job_id', 'jobtype_id']);
-		});
 	}
+
 	/**
 	 * Reverse the migrations.
 	 *
@@ -33,6 +27,5 @@ class JobTypes extends Migration {
 	 */
 	public function down() {
 		Schema::dropIfExists('job_types');
-		Schema::dropIfExists('job_jobtype');
 	}
 }
