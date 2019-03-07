@@ -16,11 +16,11 @@ class Job extends BaseClass {
 		return Language::whereIn('id', $this->languages)->pluck('name')->implode(', ');
 	}
 
-	public function job_types() {
-		return $this->belongsToMany(JobTypes::class, 'job_jobtype', 'job_id', 'jobtype_id');
+	public function job_type() {
+		return $this->belongsToMany(JobType::class);
 	}
 
-	public function getJobTypesCsvAttribute() {
-		return JobTypes::whereIn('id', $this->job_types)->pluck('name')->implode(', ');
+	public function getJobTypeCsvAttribute() {
+		// return JobType::whereIn('id', $this->id)->pluck('name')->implode(', ');
 	}
 }

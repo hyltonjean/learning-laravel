@@ -16,10 +16,10 @@ class Jobs extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->string('url');
-			$table->string('job_types');
 			$table->timestamps();
 		});
 	}
+
 	/**
 	 * Reverse the migrations.
 	 *

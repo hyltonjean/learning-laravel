@@ -4,20 +4,20 @@ use App\Model;
 use Illuminate\Database\Seeder;
 
 class JobSeeder extends Seeder {
+
 	/**
 	 * Run the database seeds.
 	 *
 	 * @return void
 	 */
-	public function run()
-	{
-		factory(Model\JobTypes::class, 3)->create();
-		factory(Model\Job::class, 10)->create();
+	public function run() {
+		$jobs = factory(Model\Job::class, 100)->create();
+		factory(Model\JobType::class, 30)->create();
 
-		$jobtypes = Model\JobTypes::find(1);
-		$jobtypes->jobs()->attach([1, 2]);
-
-		$jobtypes = Model\JobTypes::find(2);
-		$jobtypes->jobs()->attach(3);
+		Model\Job::each(function ($job) {
+			$jobs = Model\Job::find($job);
+			$jobtypes = Model\JobType::inRandomOrder()->limit(rand(1,3))->get();
+				$job->job_type()->attach($jobtypes);
+		});
 	}
 }

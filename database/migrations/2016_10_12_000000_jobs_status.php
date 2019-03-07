@@ -16,6 +16,7 @@ class JobsStatus extends Migration {
 			$table->string('status')->index();
 		});
 	}
+
 	/**
 	 * Reverse the migrations.
 	 *

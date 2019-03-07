@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Laravel</title>
+		<title>Job Project</title>
 
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -48,6 +48,14 @@
 				font-size: 84px;
 			}
 
+			.link {
+				font-size: 24px;
+				color: #636b6f;
+				font-family: 'Nunito', sans-serif;
+				font-weight: 200;
+				text-decoration: none;
+			}
+
 			.links > a {
 				color: #636b6f;
 				padding: 0 25px;
@@ -81,17 +89,9 @@
 
 			<div class="content">
 				<div class="title m-b-md">
-					Laravel
+					Welcome to Job Project
 				</div>
-
-				<div class="links">
-					<a href="https://laravel.com/docs">Documentation</a>
-					<a href="https://laracasts.com">Laracasts</a>
-					<a href="https://laravel-news.com">News</a>
-					<a href="https://nova.laravel.com">Nova</a>
-					<a href="https://forge.laravel.com">Forge</a>
-					<a href="https://github.com/laravel/laravel">GitHub</a>
-				</div>
+				<a href="/jobs" class="link">-> Visit the Job Page</a>
 			</div>
 		</div>
 	</body>
