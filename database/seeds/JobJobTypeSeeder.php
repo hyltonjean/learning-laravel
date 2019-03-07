@@ -13,7 +13,6 @@ class JobJobTypeSeeder extends Seeder {
 	public function run() {
 		$jobs = Model\Job::all();
 		foreach($jobs as $job) {
-			$jobs = Model\Job::find($job);
 			$jobtypes = Model\JobType::inRandomOrder()->limit(rand(1,3))->get();
 			$job->job_types()->attach($jobtypes);
 		}
