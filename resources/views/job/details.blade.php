@@ -25,10 +25,10 @@
 </head>
 <body>
 	<h1>Jobs Details Page</h1>
-		<p>{{ 'Job Title: '. $job->title }}</p>
-		<p>{{ 'Created_at: '. $job->created_at->format('l d M Y') }}</p>
-		<p>{{ 'Status: '. $job->status }}</p>
-		<p>{{ 'Languages: '. $job->languages_csv }}</p>
-		<p>{{ 'Job Types: '. $job->job_type->pluck('name')->implode(', ') }}</p>
+		<p>{{ $job->title }}</p>
+		<p>{{ $job->created_at->format('l d M Y') }}</p>
+		<p>{{ $job->status }}</p>
+		<p>{{ $job->languages_csv }}</p>
+		<p>{{ $job->job_types_csv }}</p>
 </body>
 </html>
