@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model as BaseClass;
 class Job extends BaseClass {
 
 	protected $casts = [
-		'languages' => 'array',
-		'job_types' => 'array'
+		'languages' => 'array'
 	];
 
 	public function getLanguagesCsvAttribute() {
