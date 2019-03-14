@@ -25,7 +25,7 @@
 		<h2>Apply for this job</h2>
 	</div>
 
-		<form action="/jobs/store" method="post">
+		<form action="/jobs/{{ $job->url }}/apply" method="post">
 			{{ csrf_field() }}
 			<div class="form-group">
 				<label for="firstName">First Name</label>

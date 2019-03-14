@@ -25,8 +25,8 @@ class JobController extends Controller {
 		return view('job.apply', ['job' => $job]);
 	}
 
-	public function store(Request $request) {
-
+	public function store(Request $request, $url) {
+		$job = Job::where('url', $url)->firstOrFail();
 		$this->validate($request, [
 			'firstName' => 'required|max:100',
 			'lastName' => 'required|max:100',
@@ -38,24 +38,15 @@ class JobController extends Controller {
 			'checkbox' => 'required'
 	]);
 		$validatedData = Input::all();
-		return view('job.store');
+		return redirect()->route('job.thanks', ['job' => $job]);
 	}
 
-	public function mail(Request $request) {
-
-		$user = Input::get('firstName');
-		$key = env('MAIL_TO_ADDRESS');
-
-		$userMail = Mail::to($key);
-		$consultantMail = Mail::to(Input::get('email'));
-   	return 'Emails are queued';
+	public function send(Request $request) {
+		Mail::to('client@test.com')->send(new SendMailable());
+   	return 'Email send';
 	}
 
-	public function thanks(Request $request, $url) {
-
-		$job = Job::where('url', $url)->firstOrFail();
-		$userMail->queue(new SendMailable($user));
-		$consultantMail->queue(new SendMailable($key));
-		return view('job.thank-you', ['job' => $job]);
+	public function thanks(Request $request) {
+		return view('job.thank-you');
 	}
 }

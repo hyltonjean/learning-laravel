@@ -1,7 +1,5 @@
 <?php
 	use Illuminate\Support\Facades\Input;
-	use Illuminate\Support\Facades\Mail;
-	use App\Mail\SendMailable;
 ?>
 
 @component('mail::message')
