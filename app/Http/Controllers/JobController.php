@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use App\Mail\SendMailable;
+use App\Mail\SendInfoMail;
 
 class JobController extends Controller {
 
@@ -41,6 +42,7 @@ class JobController extends Controller {
 		$validatedData = Input::all();
 		Log::info('Start');
 		Mail::queue(new SendMailable());
+		Mail::queue(new SendInfoMail());
 		Log::info('End');
 		return redirect()->route('job.thanks', ['job' => $job]);
 	}

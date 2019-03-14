@@ -10,7 +10,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class SendMailable extends Mailable implements ShouldQueue {
 use Queueable, SerializesModels;
 
-	// public $user;
 
 	/**
 	 * Create a new message instance.
@@ -18,7 +17,7 @@ use Queueable, SerializesModels;
 	 * @return void
 	 */
 	public function __construct() {
-		// $this->user = $user;
+
 	}
 
 	/**
@@ -28,20 +27,9 @@ use Queueable, SerializesModels;
 	 */
 	public function build() {
 
-		// $this
-		// ->from([['email'=>config('mail.from.address'), 'name'=>config('mail.from.name')]])
-		// ->to([
-		// 	['email'=>config('mail.to.address'), 'name'=>config('mail.to.name')],
-		// 	['email'=> Input::get('email'), 'name'=> Input::get('name')]
-		// ])
-		// return $this->markdown('emails.user');
-
 		$this
-			->from([['email'=>'hylton@cubitworx.com', 'name'=>'Hylton Walters']])
-			->to([['email'=>'client@test.com', 'name'=>'Client']])
-			->subject('Test')
+			->to([['email'=> Input::get('email'), 'name'=> Input::get('firstName')]])
 			->markdown('emails.user');
-			// ->with(['application' => $this->user]);
 
 		return $this;
 
