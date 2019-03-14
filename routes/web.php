@@ -23,6 +23,4 @@ Route::get('/jobs/{url}/apply', 'JobController@create');
 
 Route::post('/jobs/{url}/apply', 'JobController@store');
 
-Route::get('/send', 'JobController@send');
-
 Route::get('/jobs/{url}/thank-you', 'JobController@thanks')->name('job.thanks');
