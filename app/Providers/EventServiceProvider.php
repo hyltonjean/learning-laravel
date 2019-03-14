@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Cubitworx\Laravel\Mail\Listeners\LogMailSent;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,10 +14,7 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		MessageSending::class => [
-			LogMailSent::class,
-		],
-		Registered::class => [
+			Registered::class => [
 			SendEmailVerificationNotification::class,
 		],
 	];

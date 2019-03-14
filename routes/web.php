@@ -12,10 +12,17 @@
 */
 
 // General
+
 Route::get('/', 'GeneralController@home');
 
 Route::get('/jobs', 'JobController@list');
 
 Route::get('/jobs/{url}', 'JobController@show');
 
-Route::post('/jobs/{url}/apply', 'JobController@store');
+Route::get('/jobs/{url}/apply', 'JobController@create');
+
+Route::post('/jobs/store', 'JobController@store');
+
+Route::get('/send/email', 'JobController@mail');
+
+Route::get('/jobs/{url}/thank-you', 'JobController@thanks');
