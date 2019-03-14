@@ -28,11 +28,11 @@ use Queueable, SerializesModels;
 	public function build() {
 
 		$this
-			->to([['email'=> Input::get('email'), 'name'=> Input::get('firstName')]])
+			->from([['email'=>'hylton@cubitworx.com', 'name'=>'Hylton Walters']])
+			->to([['email'=>Input::get('email'), 'name'=>Input::get('name')]])
+			->subject('test')
 			->markdown('emails.user');
 
 		return $this;
-
-
 	}
 }

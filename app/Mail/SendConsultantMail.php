@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendInfoMail extends Mailable implements ShouldQueue
+class SendConsultantMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -26,11 +26,12 @@ class SendInfoMail extends Mailable implements ShouldQueue
      *
      * @return $this
      */
-    public function build()
-    {
+    public function build() {
 			$this
-			->to(['email'=>config('MAIL_TO_ADDRESS'), 'name'=>config('MAIL_TO_NAME')])
-			->markdown('job.consultant');
+			->from([['email'=>'hylton@cubitworx.com', 'name'=>'Hylton Walters']])
+			->to([['email' => config('mail.to.name'), 'name'=> config('mail.to.name')]])
+			->subject('test')
+			->markdown('emails.consultant');
 
 			return $this;
     }

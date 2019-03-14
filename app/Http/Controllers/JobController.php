@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use App\Mail\SendMailable;
-use App\Mail\SendInfoMail;
+use App\Mail\SendConsultantMail;
 
 class JobController extends Controller {
 
@@ -40,10 +40,12 @@ class JobController extends Controller {
 			'checkbox' => 'required'
 	]);
 		$validatedData = Input::all();
+
 		Log::info('Start');
 		Mail::queue(new SendMailable());
-		Mail::queue(new SendInfoMail());
+		Mail::queue(new SendConsultantMail());
 		Log::info('End');
+
 		return redirect()->route('job.thanks', ['job' => $job]);
 	}
 

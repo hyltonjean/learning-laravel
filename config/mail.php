@@ -59,10 +59,6 @@ return [
 		'address' => env('MAIL_FROM_ADDRESS', 'hylton@cubitworx.com'),
 		'name' => env('MAIL_FROM_NAME', 'Hylton Walters'),
 	],
-	'to' => [
-		'address' => env('MAIL_TO_ADDRESS', 'noreply@cubitworx.com'),
-		'name' => env('MAIL_TO_NAME', 'consultant'),
-	],
 
 	/*
 	|--------------------------------------------------------------------------
